@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu protótipo com Vue</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <script type="module">
+        import {createApp} from 'https://unpkg.com/petite-vue?module';
+        function Container() {
+            return {
+                channelId: '',
+                key: '[YOUR_KEY]',
+                videos: [],
+                
+                async getVideos(){
+                    fetch()
+                    this.videos = response.items;
+                }
+            }
+        }
+
+        createApp({
+            Container
+        }).mount()
+
+    </script>
+    <div v-scope="Container()">
+        <input v-model="channelId" type="text" class="border p-2">
+        <button @click="getVideos" class="p-2 rounded-md bg-red-500 font-white">Submit</button>
+    </div>
+</body>
+</html>
